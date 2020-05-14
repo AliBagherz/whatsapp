@@ -1,6 +1,6 @@
 # whatsapp
 
-An Small flutter projrct with WhatsApp design
+An Small flutter project with WhatsApp design
 
 ## Getting Started
 
