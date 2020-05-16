@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:whatsapp/WhatsAppHomePage.dart';
 void main() => runApp(MyApp());
 
@@ -10,8 +11,10 @@ class MyApp extends StatelessWidget {
       title: 'WhatsApp',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        fontFamily: 'IranSans',
+        primaryColor: new Color(0xff075e54)
       ),
-      home: WhatsAppHomePage(),
+      home: new Directionality(textDirection: TextDirection.rtl, child: WhatsAppHomePage()),
     );
   }
 }
