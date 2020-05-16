@@ -32,30 +32,27 @@ class WhatsAppHomePageState extends State<WhatsAppHomePage> with SingleTickerPro
       appBar: new AppBar(
         title: new Text('واتساپ',style: TextStyle(fontWeight: FontWeight.bold),),
         elevation: 5.0,
-        bottom: new PreferredSize(
-          child: new TabBar(
+        bottom: new TabBar(
               controller: tabcontrol,
               tabs: <Widget>[
                 new Padding(
-                  padding: EdgeInsets.symmetric(vertical: 4),
+                  padding: EdgeInsets.only(bottom: 6),
                   child: new Icon(Icons.camera_alt),
                 ),
                 new Padding(
-                  padding: EdgeInsets.symmetric(vertical: 4),
+                  padding: EdgeInsets.only(bottom: 6),
                   child: new Text('پیام ها',style: TextStyle(fontWeight: FontWeight.bold)),
                 ),
                 new Padding(
-                  padding: EdgeInsets.symmetric(vertical: 4),
+                  padding: EdgeInsets.only(bottom: 6),
                   child: new Text('وضعیت',style: TextStyle(fontWeight: FontWeight.bold,)),
                 ),
                 new Padding(
-                  padding: EdgeInsets.symmetric(vertical: 4),
+                  padding: EdgeInsets.only(bottom: 6),
                   child: new Text('تماس ها',style: TextStyle(fontWeight: FontWeight.bold),),
                 )
               ],
               indicatorColor: Colors.white,
-          ),
-          preferredSize: Size(20,40),
         ),
         actions: <Widget>[
           new Icon(Icons.search),
