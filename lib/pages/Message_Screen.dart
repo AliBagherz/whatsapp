@@ -18,10 +18,7 @@ class MessageScreen extends StatelessWidget {
             ),
             new GestureDetector(
               onTap: () {
-                Navigator.push(
-                    context,
-                    new MaterialPageRoute(builder: (context) => new SingleChatScreen(data: models[index]))
-                );
+                navigateAndDisplayMessage(context,models[index]);
               },
               child: new ListTile(
                   leading: new CircleAvatar(
@@ -58,5 +55,20 @@ class MessageScreen extends StatelessWidget {
       }
     );
   }
-
+  navigateAndDisplayMessage(BuildContext context , ChatModels data) async {
+    String result = await Navigator.push(
+      context,
+      new MaterialPageRoute(builder: (context) => new SingleChatScreen(data: data))
+    );
+    Scaffold.of(context).showSnackBar(new SnackBar(
+      content: new Text('بدرود ' + result + ' جانم' , style: TextStyle(fontFamily: 'IranSans'),),
+      duration: new Duration(milliseconds: 2900),
+      action: new SnackBarAction(
+          label: 'سلام مجدد',
+          onPressed: () {
+            navigateAndDisplayMessage(context, data);
+          }
+      )
+    ));
+  }
 }

@@ -20,12 +20,18 @@ class SingleChatScreen extends StatelessWidget {
               new GestureDetector(
                 child: new Icon(Icons.arrow_back),
                 onTap: (){
-                  Navigator.pop(context);
+                  Navigator.pop(context,data.name);
                 },
               ),
-              new SizedBox(
-                width: 10,
+              new GestureDetector(
+                child: new SizedBox(
+                  width: 10,
+                ),
+                onTap: (){
+                  Navigator.pop(context,data.name);
+                },
               ),
+
               new CircleAvatar(
                 backgroundImage: NetworkImage(
                   data.avatarUrl
