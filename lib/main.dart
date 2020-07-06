@@ -12,7 +12,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: 'IranSans',
-        primaryColor: new Color(0xff075e54)
+        primaryColor: new Color(0xff075e54),
+        accentColor: new Color(0xff25d366),
       ),
       home: new Directionality(textDirection: TextDirection.rtl, child: WhatsAppHomePage()),
     );
