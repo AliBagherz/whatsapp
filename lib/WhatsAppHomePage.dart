@@ -64,7 +64,13 @@ class WhatsAppHomePageState extends State<WhatsAppHomePage> with SingleTickerPro
             },
           ),
           new PopupMenuButton<int>(
-              onSelected: (int choice) {print(choice);},
+              onSelected: (int choice) {
+                if (choice == 0) {
+                  Navigator.of(context).pushNamed("/Settings_Screen") ;
+                } else {
+
+                }
+              },
               itemBuilder: (BuildContext context) {
                 return [
                   new PopupMenuItem(
