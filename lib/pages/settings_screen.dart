@@ -10,16 +10,16 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class SettingsState extends State<SettingsScreen> with SingleTickerProviderStateMixin {
-
+  String btnText ;
   AnimationController controller ;
   Animation<double> animation ;
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    controller = new AnimationController(vsync: this ,duration: Duration(milliseconds: 700));
-    animation = Tween(begin: 30.0,end: 200.0).animate(new CurvedAnimation(parent: controller, curve: Curves.easeInOut));
-
+    controller = new AnimationController(vsync: this ,duration: Duration(milliseconds: 1200));
+    animation = Tween(begin: 30.0,end: 600.0).animate(new CurvedAnimation(parent: controller, curve: Curves.easeInOut));
+    btnText = 'حرکت' ;
     controller.addListener(() {
       if (controller.isCompleted){
         controller.reverse();
@@ -44,9 +44,19 @@ class SettingsState extends State<SettingsScreen> with SingleTickerProviderState
               ),
               new RaisedButton(
                 onPressed: () {
-                  controller.forward();
+                  if (controller.isAnimating) {
+                    controller.stop();
+                    setState(() {
+                      btnText = 'حرکت';
+                    });
+                  } else {
+                    controller.forward();
+                    setState(() {
+                      btnText = 'استوپ';
+                    });
+                  }
                 },
-                child: new Text('بپر',style: TextStyle(fontWeight: FontWeight.bold),),
+                child: new Text(btnText,style: TextStyle(fontWeight: FontWeight.bold),),
               ),
               new Padding(padding: EdgeInsets.only(bottom: 40))
             ],
@@ -58,7 +68,7 @@ class SettingsState extends State<SettingsScreen> with SingleTickerProviderState
 
   Widget jumpBall(BuildContext context,Widget child) {
     return new Container(
-      margin: EdgeInsets.symmetric(vertical: animation.value),
+      margin: EdgeInsets.only(bottom: animation.value) ,
       height: 70,
       width: 70,
       decoration: BoxDecoration(

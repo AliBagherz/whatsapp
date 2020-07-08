@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:whatsapp/WhatsAppHomePage.dart';
+import 'package:whatsapp/pages/Login_Screen.dart';
 import 'package:whatsapp/pages/Splash_screen.dart';
+import 'package:whatsapp/pages/new_group.dart';
 import 'package:whatsapp/pages/settings_screen.dart';
 void main() => runApp(MyApp());
 
@@ -21,7 +23,9 @@ class MyApp extends StatelessWidget {
       routes: {
         "/" : (context) => new Directionality(textDirection: TextDirection.rtl, child: WhatsAppHomePage()),
         "/Splash_Screen" : (context) => new Directionality(textDirection: TextDirection.rtl, child: new SplashScreen()),
-        "/Settings_Screen" : (context) => new SettingsScreen()
+        "/Settings_Screen" : (context) => new SettingsScreen(),
+        "/NewGroup_Screen" : (context) => new NewGroupScreen(),
+        "/Login_Screen" : (context) => new LoginScreen()
       },
     );
   }

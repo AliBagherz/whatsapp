@@ -20,11 +20,11 @@ class SplashState extends State<SplashScreen> {
   }
 
   firstTime() {
-    Duration dur = Duration(milliseconds: 200);
+    Duration dur = Duration(milliseconds: 2000);
     return new Timer(dur,pushing);
   }
   pushing(){
-    Navigator.of(context).pushNamed('/Settings_Screen');
+    Navigator.of(context).pushNamed('/Login_Screen');
   }
   @override
   Widget build(BuildContext context) {

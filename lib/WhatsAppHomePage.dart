@@ -28,6 +28,7 @@ class WhatsAppHomePageState extends State<WhatsAppHomePage> with SingleTickerPro
     tabcontrol = new TabController(initialIndex: 1,length: 4, vsync: this);
     mainTheme = <String,SliverAppBar> {
       'Home' : new SliverAppBar(
+        automaticallyImplyLeading: false,
         title: new Text('واتساپ',style: TextStyle(fontWeight: FontWeight.bold),),
         pinned: true,
         floating: true,
@@ -67,8 +68,8 @@ class WhatsAppHomePageState extends State<WhatsAppHomePage> with SingleTickerPro
               onSelected: (int choice) {
                 if (choice == 0) {
                   Navigator.of(context).pushNamed("/Settings_Screen") ;
-                } else {
-
+                } else if (choice == 1) {
+                  Navigator.of(context).pushNamed("/NewGroup_Screen") ;
                 }
               },
               itemBuilder: (BuildContext context) {
